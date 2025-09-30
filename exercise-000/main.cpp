@@ -13,7 +13,7 @@
     {
         *ptr = 77;
         fmt::print("new Value: {}\n", *ptr);
-    }
+    };
 
 auto main(int argc, char **argv) -> int //argc -> argument count, argv -> argument vector
 {
