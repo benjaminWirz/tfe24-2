@@ -4,6 +4,10 @@
 #include "CLI/CLI.hpp"
 #include "config.h"
 
+int globalVar = 1;
+void foo() { fmt::print("Hello from foo!\\n"); }
+
+
 auto main(int argc, char **argv) -> int
 {
     /**
@@ -26,9 +30,25 @@ auto main(int argc, char **argv) -> int
      * it is much more convenient than std::cout and printf
      * More info at https://fmt.dev/latest/api.html
      */
-    fmt::print("Hello, {}!\n", app.get_name());
 
-    /* INSERT YOUR CODE HERE */
+    // Part 1 : Global Variable
+    fmt::print("Address of globalVar: {}\nValue of globalVar: {}\n", fmt::ptr(&globalVar), globalVar);
+
+    // Part 2: Local Variable
+    int localVar = 2;
+    fmt::print("Address of localVar: {}\nValue of localVar: {}\n", fmt::ptr(&localVar), localVar);
+   
+    // Part 3: dynamic allocated Variable   
+    int* heapVar = new int(3);
+    fmt::print("Address of heapVar: {}\nValue of heapVar: {}\n", fmt::ptr(&heapVar), *heapVar);
+    delete heapVar;
+
+    // Part 4: Function
+    fmt::print("Adresse von foo: {}\n", fmt::ptr(&foo));
+
+    // Fazit
+    /* */
+
 
     return 0; /* exit gracefully*/
 }
