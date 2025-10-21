@@ -31,7 +31,9 @@ auto main(int argc, char** argv) -> int
      */
     /* INSERT YOUR CODE HERE */
 
-    fmt::print("Count: {}\n", counter);
+    //fmt::print("Count: {}\n", counter);
+
+    fmt::println("");
 
     // Generate random numbers
     std::random_device r;
@@ -39,29 +41,32 @@ auto main(int argc, char** argv) -> int
     std::uniform_int_distribution<int> uniform_dist(1, 100);
 
     // Store random numbers in a vector
-    fmt::println("-------------------------");
-    fmt::println("random numbers:");
-
     std::vector<int> random_vec;
+    auto start = std::chrono::system_clock::now();
     for (int i = 1; i <= counter; ++i) {
         random_vec.push_back(uniform_dist(e1));
-        fmt::print("{}\n", random_vec.back());
     }
+    auto end = std::chrono::system_clock::now();
+    auto elapsed = end - start;
+
+    fmt::println("Random Vector: [{}]", fmt::join(random_vec, ", "));
+    fmt::println("Time taken to generate: {}", elapsed);
+
+    fmt::println("");
 
     //sort and print the numbers
-    fmt::println("-------------------------");
-    fmt::println("sorted numbers:");
-
     std::vector<int> sorted_vec = random_vec;
+    auto sort_start = std::chrono::system_clock::now();
+
     std::sort(sorted_vec.begin(), sorted_vec.end());
+    auto sort_end = std::chrono::system_clock::now();
+    auto sort_elapsed = sort_end - sort_start;
 
-    for (const auto& num : sorted_vec) {
-        fmt::print("{}\n", num);
-    }
+    fmt::println("Sorted Vector: [{}]", fmt::join(sorted_vec, ", "));
+    fmt::println("Time taken to sort: {}", sort_elapsed);
 
-    fmt::println("-------------------------");
 
-    
+
 
     return 0; /* exit gracefully*/
 }
