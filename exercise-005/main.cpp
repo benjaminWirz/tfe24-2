@@ -4,7 +4,8 @@
 #include <nlohmann/json.hpp>
 
 #include "CLI/CLI.hpp"
-#include "config.h"
+#include "config.h.in"
+#include "point.hpp"
 
 // for convenience
 using json = nlohmann::json;

@@ -1,7 +1,9 @@
 #include "point.hpp"
+#include <cmath>
+
+Point::Point() : x_m(0), y_m(0) {}
 
 Point::Point(int x, int y) : x_m(x), y_m(y) {}
-Point::~Point() = default;
 
 void Point::move(int dx, int dy)
 {
