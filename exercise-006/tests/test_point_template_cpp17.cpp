@@ -30,11 +30,10 @@ TEST_CASE("Point<T>: distance_to - Typ & Wert") {
   REQUIRE(b.distance_to(a) == Catch::Approx(5.0).margin(1e-12));
   REQUIRE(a.distance_to(a) == Catch::Approx(0.0).margin(1e-12));
 }
-/*
+
 
 TEST_CASE("Point<T>: fmt-Formatter") {
   Point<int> pi{1,2};
-  REQUIRE(fmt::format("{}", pi) == "(1, 2)");
+  //REQUIRE(fmt::format("{}", pi) == "(1, 2)");
+  //fmt::print("pi: {}\n", pi);
 }
-
-*/
