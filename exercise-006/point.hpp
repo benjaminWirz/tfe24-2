@@ -1,6 +1,7 @@
 # pragma once
 #include <type_traits>
 #include <fmt/core.h>
+#include <cmath>
 
 template <typename T> class Point {
     static_assert(std::is_arithmetic<T>::value, "Point<T>: T must be arithmetic");
