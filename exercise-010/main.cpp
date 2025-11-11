@@ -29,13 +29,37 @@ auto main(int argc, char **argv) -> int
      */
     fmt::print("Hello, {}!\n", app.get_name());
 
-    
-    {
-        MyVector vec;
-    }
 
-    MyVector vec2(27);
-    fmt::println("Hello exercise number 3 after Vector");
+    // {
+    //     MyVector vec;
+    // }
+
+    // MyVector vec2(27);
+    // fmt::println("Hello exercise number 3 after Vector");
+
+    myvector<int> vec3(5);
+
+    vec3.status();
+
+    vec3.push_back(20);
+    vec3.push_back(34);
+    vec3.push_back(50);
+    vec3.push_back(22);
+    vec3.push_back(13);
+    vec3.push_back(53); // this should print an error message
+
+    vec3.status();
+
+    fmt::println("Element at index 0: {}", vec3.at(0));
+    fmt::println("Element at index 1: {}", vec3.at(1));
+    fmt::println("Element at index 2: {}", vec3.at(2));
+    fmt::println("Element at index 3: {}", vec3.at(3));
+    fmt::println("Element at index 4: {}", vec3.at(4));
+    fmt::println("Element at index 5: {}", vec3.at(5));
+
+
+
+
 
     return 0; /* exit gracefully*/
 }
