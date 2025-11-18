@@ -4,7 +4,8 @@
 #include <nlohmann/json.hpp>
 
 #include "CLI/CLI.hpp"
-#include "config.h"
+#include "config.h.in"
+#include "point.hpp"
 
 // for convenience
 using json = nlohmann::json;
@@ -34,6 +35,15 @@ auto main(int argc, char **argv) -> int
     fmt::print("Hello, {}!\n", app.get_name());
 
     /* INSERT YOUR CODE HERE */
+
+    Point p1(2, 3);     // Erzeugen eines Punktes (2, 3)
+    p1.print();         // Ausgabe: (2, 3)
+
+    p1.move(1, -1);     // Verschiebe um (1, -1)
+    p1.print();         // Ausgabe: (3, 2)
+
+    Point p2;           // Standardkonstruktor -> (0, 0)
+    p2.print();         // Ausgabe: (0, 0)
 
     return 0; /* exit gracefully*/
 }
