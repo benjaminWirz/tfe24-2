@@ -37,7 +37,9 @@ auto main(int argc, char **argv) -> int
     // MyVector vec2(27);
     // fmt::println("Hello exercise number 3 after Vector");
 
-    myvector<int> vec3(5);
+    /*
+    
+    myvector<int> vec3(3);
 
     vec3.status();
 
@@ -57,9 +59,30 @@ auto main(int argc, char **argv) -> int
     fmt::println("Element at index 4: {}", vec3.at(4));
     fmt::println("Element at index 5: {}", vec3.at(5));
 
+    vec3.status();
 
+    */
 
+    tfe24::myvector<int> vec3(4);
+    vec3.status();
 
+    vec3.push_back(12);
+    vec3.push_back(13);
+    vec3.push_back(14);
+    vec3.push_back(15);
+
+    vec3.status();
+
+    vec3.resize(5);
+
+    vec3.status();
+
+    tfe24::myvector<int> vec4(vec3);
+
+    vec3.print_all(); 
+    vec4.print_all();  
+    
+    fmt::println("Element at index 2: {}", vec3.at(45));
 
     return 0; /* exit gracefully*/
 }
