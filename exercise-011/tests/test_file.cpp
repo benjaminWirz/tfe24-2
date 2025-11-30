@@ -43,6 +43,10 @@ TEST_CASE("Check JSON file")
                 CHECK(v[i] == tc["initial_values"][i].get<int>());
             }
 
+            // Check Resize
+            v.resize(tc["resize_to"].get<size_t>());
+            CHECK(v.size() == tc["resize_to"].get<size_t>());
+
         }
     }
 }
