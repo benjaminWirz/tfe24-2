@@ -55,5 +55,9 @@ auto main(int argc, char **argv) -> int
     // gesamte Datei in einen String laden
     std::string text(std::istreambuf_iterator<char>{in}, std::istreambuf_iterator<char>{});
 
+    // JSON parsen
+    json doc = json::parse(text);
+
     fmt::print("Inhalt der JSON-Datei:\n\n{}\n", text);
+
 }
