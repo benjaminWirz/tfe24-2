@@ -6,11 +6,11 @@
         1,
         2
       ],
+      "resize_to" : 5,
       "operations": [],
       "expect": {
         "final_size": 2
-      },
-      "resize_to" : 5
+      }
       }
   ]
 }

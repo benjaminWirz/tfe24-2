@@ -47,6 +47,10 @@ TEST_CASE("Check JSON file")
             v.resize(tc["resize_to"].get<size_t>());
             CHECK(v.size() == tc["resize_to"].get<size_t>());
 
+            // Check clear
+            v.clear();
+            CHECK(v.size() == 0);
+
         }
     }
 }
