@@ -1,13 +1,22 @@
 #include <fmt/chrono.h>
 #include <fmt/format.h>
 
+#include <filesystem>
+#include <fstream>
+#include <iterator>
 #include <nlohmann/json.hpp>
+#include <string>
 
 #include "CLI/CLI.hpp"
 #include "config.h"
 
 // for convenience
 using json = nlohmann::json;
+namespace fs = std::filesystem;
+
+const auto path = fs::path{config::json_tests};
+
+// File stream will be opened inside main to avoid running code at namespace scope
 
 auto main(int argc, char **argv) -> int
 {
@@ -35,5 +44,16 @@ auto main(int argc, char **argv) -> int
 
     /* INSERT YOUR CODE HERE */
 
-    return 0; /* exit gracefully*/
+    // open JSON file
+    std::ifstream in(path);
+    if (!in.is_open())
+    {
+        fmt::print("Fehler: konnte JSON-Datei nicht öffnen: {}\n", path.string());
+        return 1;
+    }
+
+    // gesamte Datei in einen String laden
+    std::string text(std::istreambuf_iterator<char>{in}, std::istreambuf_iterator<char>{});
+
+    fmt::print("Inhalt der JSON-Datei:\n\n{}\n", text);
 }

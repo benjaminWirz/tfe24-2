@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {
+      "name": "simple_init",
+      "initial_values": [1, 2],
+      "operations": [],
+      "expect": {
+        "final_size": 2
+      }
+    }
+  ]
+}
