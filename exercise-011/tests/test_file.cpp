@@ -37,6 +37,12 @@ TEST_CASE("Check JSON file")
             }
             
             CHECK(v.size() == tc["expect"]["final_size"].get<size_t>());
+
+            // Check Push back values
+            for (size_t i = 0; i < tc["expect"]["final_size"].get<size_t>(); i++) {
+                CHECK(v[i] == tc["initial_values"][i].get<int>());
+            }
+
         }
     }
 }
