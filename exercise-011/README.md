@@ -663,3 +663,16 @@ Geben Sie Ihrem PR einen aussagekräftigen Titel (z. B. „exercise-011: tfe24::
 Hinweis: PRs werden nach Review und erfolgreichem Testlauf gemerged. Unvollständige PRs bitte als Draft markieren.
 
 Viel Erfolg beim test‑getriebenen „Selbst‑Vectorn“! 🚀
+
+---
+## Zusammenfassung
+
+Die Lösung der Aufgabe umfasst einen Testcase in welchem die verschiedenen Basisfunktionen von `std::vector` getestet werden. Die Testwerte und der Test an sich wird in einer JSON-Datei ausgelesen.
+
+Erkenntnisse: 
+- Enlesen verschiedener Elemente aus einer JSON Datei mit Angabe der Pfade (`["initial Values"]` `[0]`) innerhalb der Test-Case Datei oder allgemein cpp-Dateien.
+- Aufbau einer JSON-Datei
+- Funktionsweise von Catch2 mit JSOn-Files
+
+
+
