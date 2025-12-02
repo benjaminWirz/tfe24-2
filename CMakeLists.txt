@@ -60,19 +60,20 @@ include(cmake/StaticAnalyzers.cmake)
 include(cmake/Doxygen.cmake)
 
 # Exercises & solutions
-add_subdirectory(exercise-000)
-add_subdirectory(exercise-001)
-add_subdirectory(exercise-002)
-add_subdirectory(exercise-003)
-add_subdirectory(exercise-004)
-add_subdirectory(exercise-005)
-add_subdirectory(exercise-006)
+#add_subdirectory(exercise-000)
+#add_subdirectory(exercise-001)
+#add_subdirectory(exercise-002)
+#add_subdirectory(exercise-003)
+#add_subdirectory(exercise-004)
+#add_subdirectory(exercise-005)
+#add_subdirectory(exercise-006)
 
-add_subdirectory(exercise-010)
-add_subdirectory(exercise-011)
+#add_subdirectory(exercise-010)
+#add_subdirectory(exercise-011)
 
-add_subdirectory(exercise-020)
-add_subdirectory(exercise-030)
+#add_subdirectory(exercise-020)
+#add_subdirectory(exercise-030)
+add_subdirectory(testattest)
 
 # templates
 add_subdirectory(templates)
